@@ -13,19 +13,6 @@
 
 ---
 
-## 📊 GitHub Stats
-
-<div align="center">
-  <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=RemReyx&theme=radical" alt="GitHub profile details"/>
-  <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=RemReyx&theme=radical" alt="Most used languages"/>
-  <br />
-  <img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RemReyx&theme=radical" alt="Total contributions and streaks"/>
-</div>
-
----
-
----
-
 ## 👨‍💻 About / Mission
 I’m a Full-Stack Developer who enjoys turning ideas into real, working systems.
 I don’t just write code—I build experiences that are fast, scalable, and meaningful.
@@ -54,6 +41,38 @@ To create software that doesn’t just work—but actually matters.
 
 ### 🌍 Location
 📍 Philippines 🇵🇭
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+  <table>
+    <tr>
+      <td>
+        <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=RemReyx&theme=radical" alt="GitHub profile details"/>
+      </td>
+      <td>
+        <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=RemReyx&theme=radical" alt="Most used languages"/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RemReyx&theme=radical" alt="Total contributions and streaks"/>
+      </td>
+    </tr>
+  </table>
+</div>
+
+---
+
+## 📈 Contribution Activity
+
+<div align="center">
+
+[![RemReyx's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=RemReyx&bg_color=0d1117&color=ff6e96&line=ff6e96&point=ffffff&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+</div>
 
 ---
 
