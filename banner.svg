@@ -21,23 +21,6 @@
       <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
-    <!-- Text clipping for typewriter effect -->
-    <clipPath id="clip-line1">
-      <rect x="260" y="110" width="0" height="36">
-        <animate attributeName="width" from="0" to="390" dur="2s" begin="0.3s" fill="freeze" calcMode="linear"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-line2">
-      <rect x="260" y="152" width="0" height="30">
-        <animate attributeName="width" from="0" to="390" dur="1.6s" begin="2.6s" fill="freeze" calcMode="linear"/>
-      </rect>
-    </clipPath>
-    <clipPath id="clip-line3">
-      <rect x="260" y="188" width="0" height="28">
-        <animate attributeName="width" from="0" to="390" dur="1.4s" begin="4.5s" fill="freeze" calcMode="linear"/>
-      </rect>
-    </clipPath>
-
     <!-- Circuit line gradient -->
     <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%"   stop-color="#c9a8e8" stop-opacity="0.1"/>
@@ -55,48 +38,41 @@
   <rect width="900" height="300" fill="url(#bg)" rx="12"/>
 
   <!-- ===== LEFT SIDE CIRCUIT LINES ===== -->
-  <g filter="url(#glow)" stroke="url(#lineGrad)" stroke-width="1" fill="none" opacity="0.7">
-    <!-- Line 1 -->
+  <g filter="url(#glow)" stroke="url(#lineGrad)" stroke-width="1" fill="none" opacity="0.6">
     <path d="M 0 60 L 60 60 L 60 90 L 140 90 L 140 70 L 210 70"/>
-    <!-- Line 2 -->
     <path d="M 0 120 L 40 120 L 40 100 L 100 100 L 100 140 L 180 140 L 180 115 L 230 115"/>
-    <!-- Line 3 -->
     <path d="M 0 180 L 50 180 L 50 160 L 130 160 L 130 195 L 200 195"/>
-    <!-- Line 4 -->
     <path d="M 0 240 L 70 240 L 70 220 L 150 220 L 150 245 L 220 245"/>
-    <!-- Branch -->
     <path d="M 100 100 L 100 70 L 140 70"/>
     <path d="M 60 90 L 60 50 L 100 50"/>
   </g>
 
   <!-- Left node dots -->
-  <g fill="#c4a8e8" filter="url(#dotglow)" opacity="0.75">
-    <circle cx="60"  cy="60"  r="2.5"/>
-    <circle cx="140" cy="90"  r="2.5"/>
-    <circle cx="140" cy="70"  r="2.5"/>
-    <circle cx="40"  cy="120" r="2.5"/>
+  <g fill="#c4a8e8" filter="url(#dotglow)" opacity="0.6">
+    <circle cx="60" cy="60" r="2.5"/>
+    <circle cx="140" cy="90" r="2.5"/>
+    <circle cx="140" cy="70" r="2.5"/>
+    <circle cx="40" cy="120" r="2.5"/>
     <circle cx="100" cy="100" r="2.5"/>
     <circle cx="180" cy="140" r="2.5"/>
-    <circle cx="50"  cy="180" r="2.5"/>
+    <circle cx="50" cy="180" r="2.5"/>
     <circle cx="130" cy="160" r="2.5"/>
-    <circle cx="70"  cy="240" r="2.5"/>
+    <circle cx="70" cy="240" r="2.5"/>
     <circle cx="150" cy="220" r="2.5"/>
   </g>
 
-  <!-- Traveling light dot on left path 1 -->
-  <circle r="3.5" fill="#b896e0" filter="url(#dotglow)" opacity="0.9">
+  <!-- Traveling light dots on left paths -->
+  <circle r="3.5" fill="#b896e0" filter="url(#dotglow)" opacity="0.8">
     <animateMotion dur="3s" repeatCount="indefinite" begin="0s">
       <mpath href="#lp1"/>
     </animateMotion>
   </circle>
-  <!-- Traveling light dot on left path 2 -->
-  <circle r="3" fill="#92b4e8" filter="url(#dotglow)" opacity="0.85">
+  <circle r="3" fill="#92b4e8" filter="url(#dotglow)" opacity="0.75">
     <animateMotion dur="4s" repeatCount="indefinite" begin="1s">
       <mpath href="#lp2"/>
     </animateMotion>
   </circle>
-  <!-- Traveling dot on left path 3 -->
-  <circle r="2.5" fill="#e4a0cc" filter="url(#dotglow)" opacity="0.8">
+  <circle r="2.5" fill="#e4a0cc" filter="url(#dotglow)" opacity="0.7">
     <animateMotion dur="3.5s" repeatCount="indefinite" begin="0.5s">
       <mpath href="#lp3"/>
     </animateMotion>
@@ -108,20 +84,20 @@
   <path id="lp3" fill="none" stroke="none" d="M 0 180 L 50 180 L 50 160 L 130 160 L 130 195 L 200 195"/>
 
   <!-- ===== RIGHT SIDE CIRCUIT LINES ===== -->
-  <g filter="url(#glow)" stroke="url(#lineGradR)" stroke-width="1" fill="none" opacity="0.7">
-    <path d="M 900 80  L 840 80  L 840 55  L 760 55  L 760 85  L 690 85"/>
+  <g filter="url(#glow)" stroke="url(#lineGradR)" stroke-width="1" fill="none" opacity="0.6">
+    <path d="M 900 80 L 840 80 L 840 55 L 760 55 L 760 85 L 690 85"/>
     <path d="M 900 150 L 860 150 L 860 125 L 780 125 L 780 160 L 700 160 L 700 135 L 660 135"/>
     <path d="M 900 210 L 850 210 L 850 190 L 770 190 L 770 220 L 690 220"/>
     <path d="M 900 265 L 830 265 L 830 245 L 750 245 L 750 270 L 680 270"/>
-    <path d="M 840 80  L 840 45  L 800 45"/>
+    <path d="M 840 80 L 840 45 L 800 45"/>
     <path d="M 780 125 L 780 100 L 760 100 L 760 55"/>
   </g>
 
   <!-- Right node dots -->
-  <g fill="#a8c0ee" filter="url(#dotglow)" opacity="0.75">
-    <circle cx="840" cy="80"  r="2.5"/>
-    <circle cx="760" cy="55"  r="2.5"/>
-    <circle cx="760" cy="85"  r="2.5"/>
+  <g fill="#a8c0ee" filter="url(#dotglow)" opacity="0.6">
+    <circle cx="840" cy="80" r="2.5"/>
+    <circle cx="760" cy="55" r="2.5"/>
+    <circle cx="760" cy="85" r="2.5"/>
     <circle cx="860" cy="150" r="2.5"/>
     <circle cx="780" cy="125" r="2.5"/>
     <circle cx="700" cy="160" r="2.5"/>
@@ -132,81 +108,96 @@
   </g>
 
   <!-- Traveling dots on right paths -->
-  <circle r="3.5" fill="#92b4e8" filter="url(#dotglow)" opacity="0.9">
+  <circle r="3.5" fill="#92b4e8" filter="url(#dotglow)" opacity="0.8">
     <animateMotion dur="3.2s" repeatCount="indefinite" begin="0.8s">
       <mpath href="#rp1"/>
     </animateMotion>
   </circle>
-  <circle r="3" fill="#b896e0" filter="url(#dotglow)" opacity="0.85">
+  <circle r="3" fill="#b896e0" filter="url(#dotglow)" opacity="0.75">
     <animateMotion dur="4.2s" repeatCount="indefinite" begin="0s">
       <mpath href="#rp2"/>
     </animateMotion>
   </circle>
-  <circle r="2.5" fill="#e4a0cc" filter="url(#dotglow)" opacity="0.8">
+  <circle r="2.5" fill="#e4a0cc" filter="url(#dotglow)" opacity="0.7">
     <animateMotion dur="3.8s" repeatCount="indefinite" begin="1.5s">
       <mpath href="#rp3"/>
     </animateMotion>
   </circle>
 
   <!-- Hidden motion paths (right) -->
-  <path id="rp1" fill="none" stroke="none" d="M 900 80  L 840 80  L 840 55  L 760 55  L 760 85  L 690 85"/>
+  <path id="rp1" fill="none" stroke="none" d="M 900 80 L 840 80 L 840 55 L 760 55 L 760 85 L 690 85"/>
   <path id="rp2" fill="none" stroke="none" d="M 900 150 L 860 150 L 860 125 L 780 125 L 780 160 L 700 160 L 700 135 L 660 135"/>
   <path id="rp3" fill="none" stroke="none" d="M 900 210 L 850 210 L 850 190 L 770 190 L 770 220 L 690 220"/>
 
   <!-- ===== TYPEWRITER TEXT (center) ===== -->
 
-  <!-- Greeting -->
-  <text x="260" y="138" font-family="'Courier New', monospace" font-size="22" font-weight="700"
-        fill="#b06abf" opacity="0">
-    <tspan>Hey there! I'm RemReyx 👋</tspan>
-    <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="0.2s" fill="freeze"/>
-  </text>
-  <!-- Clip the greeting for typewriter -->
-  <rect x="260" y="110" height="36" fill="url(#bg)">
-    <animate attributeName="width" from="400" to="0" dur="2s" begin="0.3s" fill="freeze"/>
-  </rect>
+  <g font-family="'Courier New', monospace" font-size="22" font-weight="600" fill="#cc7ebc" text-anchor="middle">
+    <!-- Using multiple rects to cover/uncover strings to simulate typing and deleting.
+         Total cycle time: 16s (4 phrases x 4s each)
+    -->
 
-  <!-- Cursor after line 1 -->
-  <rect x="260" y="116" width="2" height="22" fill="#b06abf" opacity="0">
-    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.13;0.14;0.85;0.86;1" dur="2s" begin="0.3s" fill="freeze" repeatCount="indefinite"/>
-    <animate attributeName="x" from="260" to="630" dur="2s" begin="0.3s" fill="freeze"/>
-  </rect>
+    <!-- Phrase 1: Full-Stack Developer 🚀 -->
+    <g>
+      <text x="450" y="158">Full-Stack Developer 🚀</text>
+      <!-- Cover rectangle moves left to right (typing) then right to left (deleting) -->
+      <rect x="250" y="130" width="400" height="40" fill="url(#bg)">
+        <animate attributeName="x" values="250; 650; 650; 250; 250" keyTimes="0; 0.125; 0.22; 0.25; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
+      </rect>
+    </g>
 
-  <!-- Subtitle line 2 -->
-  <text x="260" y="174" font-family="'Courier New', monospace" font-size="17" font-weight="600"
-        fill="#8a7ab8" opacity="0">
-    <tspan>Full-Stack Developer 🚀</tspan>
-    <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="2.5s" fill="freeze"/>
-  </text>
-  <rect x="260" y="153" height="30" fill="url(#bg)">
-    <animate attributeName="width" from="350" to="0" dur="1.6s" begin="2.6s" fill="freeze"/>
-  </rect>
+    <!-- Phrase 2: Building Fast & Beautiful UIs 🎨 -->
+    <g>
+      <text x="450" y="158">Building Fast &amp; Beautiful UIs 🎨</text>
+      <rect x="250" y="130" width="400" height="40" fill="url(#bg)">
+        <animate attributeName="x" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.25; 0.375; 0.47; 0.5; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
+      </rect>
+    </g>
 
-  <!-- Subtitle line 3 -->
-  <text x="260" y="208" font-family="'Courier New', monospace" font-size="15" font-weight="500"
-        fill="#a08ac8" opacity="0">
-    <tspan>Laravel · React · TypeScript</tspan>
-    <animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="4.4s" fill="freeze"/>
-  </text>
-  <rect x="260" y="189" height="28" fill="url(#bg)">
-    <animate attributeName="width" from="320" to="0" dur="1.4s" begin="4.5s" fill="freeze"/>
-  </rect>
+    <!-- Phrase 3: Laravel | React | TypeScript -->
+    <g>
+      <text x="450" y="158">Laravel | React | TypeScript</text>
+      <rect x="250" y="130" width="400" height="40" fill="url(#bg)">
+        <animate attributeName="x" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.5; 0.625; 0.72; 0.75; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
+      </rect>
+    </g>
 
-  <!-- Subtitle line 4 -->
-  <text x="260" y="240" font-family="'Courier New', monospace" font-size="13"
-        fill="#c4a0d8" opacity="0">
-    <tspan>Always learning, always growing 🌱</tspan>
-    <animate attributeName="opacity" from="0" to="0.75" dur="0.1s" begin="6.1s" fill="freeze"/>
-  </text>
-  <rect x="260" y="222" height="26" fill="url(#bg)">
-    <animate attributeName="width" from="360" to="0" dur="1.5s" begin="6.2s" fill="freeze"/>
-  </rect>
+    <!-- Phrase 4: Always learning, always growing 🌱 -->
+    <g>
+      <text x="450" y="158">Always learning, always growing 🌱</text>
+      <rect x="250" y="130" width="400" height="40" fill="url(#bg)">
+        <animate attributeName="x" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.75; 0.875; 0.97; 1; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
+      </rect>
+    </g>
 
-  <!-- Blinking final cursor -->
-  <rect x="261" y="223" width="2" height="18" fill="#b06abf" opacity="0">
-    <animate attributeName="opacity" values="0;1;0" dur="1s" begin="7.8s" repeatCount="indefinite" fill="freeze"/>
-  </rect>
+    <!-- Cursor moving and blinking -->
+    <rect y="138" width="2" height="24" fill="#cc7ebc">
+      <!-- Blinking -->
+      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite"/>
+      <!-- X position exactly following the edge of the cover rectangles.
+           The text width varies from ~260 to 380px.
+           Center is 450.
+           Phrase 1 (Full-Stack Developer 🚀): width ~310. Start ~295, End ~605.
+           Phrase 2 (Building Fast...): width ~390. Start ~255, End ~645.
+           Phrase 3 (Laravel...): width ~320. Start ~290, End ~610.
+           Phrase 4 (Always learning...): width ~390. Start ~255, End ~645.
+      -->
+      <animate attributeName="x"
+               values="
+                 450;
+                 295; 605; 605; 295;
+                 255; 645; 645; 255;
+                 290; 610; 610; 290;
+                 255; 645; 645; 255
+               "
+               keyTimes="
+                 0;
+                 0.001; 0.125; 0.22; 0.25;
+                 0.251; 0.375; 0.47; 0.5;
+                 0.501; 0.625; 0.72; 0.75;
+                 0.751; 0.875; 0.97; 1
+               "
+               dur="16s" repeatCount="indefinite" fill="freeze"/>
+    </rect>
+  </g>
 
-  <!-- Subtle bottom border line -->
-  <line x1="0" y1="299" x2="900" y2="299" stroke="#e0d0f0" stroke-width="0.5" opacity="0.5"/>
 </svg>

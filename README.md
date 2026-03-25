@@ -3,12 +3,7 @@
 <!-- Animated SVG banner -->
 <img width="100%" src="./banner.svg" alt="RemReyx Banner" />
 
-<!-- Typing animation -->
-<a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=FF6E96&center=true&vCenter=true&random=false&width=600&lines=Full-Stack+Developer+%F0%9F%9A%80;Building+Fast+%26+Beautiful+UIs+%F0%9F%8E%A8;Laravel+%7C+React+%7C+TypeScript+enthusiast;Always+learning%2C+always+growing+%F0%9F%8C%B1" alt="Typing SVG" />
-</a>
 
-<br/>
 
 <!-- Social badges -->
 [![GitHub followers](https://img.shields.io/github/followers/RemReyx?label=Followers&style=for-the-badge&color=ff6e96&labelColor=0d1117&logo=github)](https://github.com/RemReyx)
