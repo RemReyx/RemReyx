@@ -31,6 +31,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
+      z-index: 0;
     }
 
     /* Animated glow along each circuit path */
@@ -233,12 +234,14 @@
 </div>
 
 <script>
-  const lines = [
-    "Hey there! I'm RemReyx 👋",
-    "Building Fast & Beautiful UIs 🎨",
+  const rawLines = [
+    "Hey there! I'm RemRey ",
+    "Building Fast & Beautiful UIs ",
     "Laravel | React | TypeScript",
-    "Always learning, always growing 🌱",
+    "Always learning, always growing ",
   ];
+  // Use codepoints so emoji/surrogate pairs don't get split mid-character.
+  const lines = rawLines.map((s) => Array.from(s));
 
   let lineIdx = 0, charIdx = 0, deleting = false;
   const el = document.getElementById('typed');
@@ -250,8 +253,23 @@
   const basePaths = Array.from(circuitSvg.querySelectorAll('.circuit-path'));
   const typingDot = document.getElementById('typing-dot');
 
-  const overlayPaths = basePaths.map((p) => {
-    const clone = p.cloneNode(true);
+  // Some paths use `calc(100vw...)` in `d`, which can produce invalid geometry during
+  // `getTotalLength()` / `getPointAtLength()`; we skip those for safety.
+  const overlayCandidates = [];
+  for (const p of basePaths) {
+    try {
+      const d = p.getAttribute('d') || '';
+      if (d.includes('calc(')) continue;
+      const len = p.getTotalLength();
+      if (!Number.isFinite(len) || len <= 0) continue;
+      overlayCandidates.push({ original: p, len });
+    } catch (_e) {
+      // Ignore paths that can't provide stable length measurements.
+    }
+  }
+
+  const overlayPaths = overlayCandidates.map(({ original }) => {
+    const clone = original.cloneNode(true);
     clone.removeAttribute('id');
     clone.classList.add('typing-overlay');
     clone.style.opacity = '0';
@@ -259,10 +277,7 @@
     return clone;
   });
 
-  const overlayLengths = overlayPaths.map((p) => {
-    const len = p.getTotalLength();
-    return Number.isFinite(len) ? len : 1; // safety fallback
-  });
+  const overlayLengths = overlayCandidates.map(({ len }) => len);
 
   overlayPaths.forEach((p, i) => {
     const len = overlayLengths[i];
@@ -275,6 +290,8 @@
     if (!currentLine) return;
 
     const safeProgress = Math.max(0, Math.min(1, (progress || 0)));
+
+    if (!overlayPaths.length) return;
 
     // Use a consistent segment per sentence for a "connection" feel.
     const activeIndex = lineIdx % overlayPaths.length;
@@ -311,7 +328,7 @@
   function tick() {
     const current = lines[lineIdx];
     if (!deleting) {
-      el.textContent = current.slice(0, ++charIdx);
+      el.textContent = current.slice(0, ++charIdx).join('');
       updateCircuitForChar(charIdx / (current.length || 1));
       if (charIdx === current.length) {
         deleting = true;
@@ -319,7 +336,7 @@
         return;
       }
     } else {
-      el.textContent = current.slice(0, --charIdx);
+      el.textContent = current.slice(0, --charIdx).join('');
       updateCircuitForChar(charIdx / (current.length || 1));
       if (charIdx === 0) {
         deleting = false;
@@ -331,7 +348,8 @@
     setTimeout(tick, deleting ? SPEED_DEL : SPEED_TYPE);
   }
 
-  setTimeout(tick, 600);
+  // Start immediately so the first sentence appears without waiting.
+  setTimeout(tick, 200);
 </script>
 </body>
 </html>
