@@ -144,3 +144,15 @@ A full-featured backend inventory and operations management system powering the 
 <sub>✨ Built with ❤️ using GitHub Readme Stats, Streak Stats & Capsule Render ✨</sub>
 
 </div>
+
+---
+
+  ## 📬 Connect With Me
+
+<div align="center">
+
+[![Gmail](https://img.shields.io/badge/brogada.reymon09@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:brogada.reymon09@gmail.com)
+[![Gmail](https://img.shields.io/badge/brogada.reymon09@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:brogada.reymon09@gmail.com)
+[![GitHub](https://img.shields.io/badge/@JBFaner-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RemReyx)
+
+</div>
