@@ -57,9 +57,10 @@ To create software that doesn’t just work—but actually matters.
       </td>
     </tr>
     <tr>
-      <td colspan="2">
+      <td>
         <img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RemReyx&theme=radical" alt="Total contributions and streaks"/>
       </td>
+      <td></td>
     </tr>
   </table>
 </div>
