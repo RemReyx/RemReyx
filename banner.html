@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RemReyx Banner</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #f4f0fa 25%,
+        #edf2fb 50%,
+        #f9eef6 75%,
+        #f5f5f5 100%
+      );
+    }
+
+    /* SVG circuit canvas */
+    #circuit-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    /* Animated glow along each circuit path */
+    .circuit-path {
+      fill: none;
+      stroke: url(#circuitGrad);
+      stroke-width: 1;
+      opacity: 0.55;
+    }
+
+    .glow-dot {
+      fill: #d084c8;
+      filter: url(#glow);
+    }
+
+    /* Center content */
+    .center {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      user-select: none;
+    }
+
+    .typing-wrapper {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .typing-text {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: clamp(1.1rem, 3vw, 1.8rem);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #b06bbf;
+      text-shadow:
+        0 0 12px rgba(200, 130, 220, 0.45),
+        0 0 30px rgba(170, 100, 200, 0.2);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background: #b06bbf;
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+      box-shadow: 0 0 6px rgba(180, 100, 210, 0.7);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-family: 'Arial', sans-serif;
+      font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+      color: #c4a4d4;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.5s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SVG circuit lines -->
+<svg id="circuit-svg" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Gradient for circuit lines -->
+    <linearGradient id="circuitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#d4a8e8" stop-opacity="0.15"/>
+      <stop offset="40%"  stop-color="#a8c4ee" stop-opacity="0.6"/>
+      <stop offset="70%"  stop-color="#e8a8d0" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#c8b4f0" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Line glow filter -->
+    <filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Left-side diagonal circuit lines -->
+  <!-- Line 1 -->
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M -20 180 L 80 180 L 80 120 L 200 120 L 200 160 L 340 160"/>
+  <!-- Line 2 -->
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M -20 320 L 60 320 L 60 260 L 140 260 L 140 300 L 300 300 L 300 240 L 400 240"/>
+  <!-- Line 3 -->
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M 20 460 L 20 400 L 100 400 L 100 440 L 220 440 L 220 380 L 360 380"/>
+  <!-- Line 4 small branch -->
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M 100 120 L 100 60 L 160 60"/>
+  <!-- Line 5 -->
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M 0 560 L 50 560 L 50 520 L 180 520 L 180 490 L 280 490"/>
+  <!-- Diagonal connector -->
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M 200 120 L 200 80 L 320 80 L 320 160"/>
+
+  <!-- Right-side circuit lines -->
+  <path class="circuit-path" filter="url(#lineGlow)"
+    id="rLine1"
+    d="M calc(100vw + 20) 200 L calc(100vw - 80) 200 L calc(100vw - 80) 260 L calc(100vw - 200) 260"/>
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M calc(100vw + 20) 380 L calc(100vw - 60) 380 L calc(100vw - 60) 320 L calc(100vw - 200) 320 L calc(100vw - 200) 280 L calc(100vw - 340) 280"/>
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M calc(100vw - 20) 480 L calc(100vw - 20) 440 L calc(100vw - 140) 440 L calc(100vw - 140) 400 L calc(100vw - 300) 400"/>
+  <path class="circuit-path" filter="url(#lineGlow)"
+    d="M calc(100vw - 20) 160 L calc(100vw - 20) 100 L calc(100vw - 120) 100 L calc(100vw - 120) 160 L calc(100vw - 200) 160"/>
+
+  <!-- Glowing traveling dots (animated along paths) -->
+  <circle class="glow-dot" r="3" opacity="0.85">
+    <animateMotion dur="4s" repeatCount="indefinite" begin="0s">
+      <mpath href="#path-anim-1"/>
+    </animateMotion>
+  </circle>
+  <circle class="glow-dot" r="2.5" opacity="0.7" fill="#a8c4ee">
+    <animateMotion dur="6s" repeatCount="indefinite" begin="1s">
+      <mpath href="#path-anim-2"/>
+    </animateMotion>
+  </circle>
+  <circle class="glow-dot" r="3" opacity="0.8" fill="#c4b0ee">
+    <animateMotion dur="5s" repeatCount="indefinite" begin="2s">
+      <mpath href="#path-anim-3"/>
+    </animateMotion>
+  </circle>
+  <circle class="glow-dot" r="2" opacity="0.65" fill="#eaa8d4">
+    <animateMotion dur="7s" repeatCount="indefinite" begin="0.5s">
+      <mpath href="#path-anim-4"/>
+    </animateMotion>
+  </circle>
+
+  <!-- Hidden paths used for dot animation (mirrors visible paths) -->
+  <path id="path-anim-1" fill="none" stroke="none"
+    d="M -20 180 L 80 180 L 80 120 L 200 120 L 200 160 L 340 160"/>
+  <path id="path-anim-2" fill="none" stroke="none"
+    d="M -20 320 L 60 320 L 60 260 L 140 260 L 140 300 L 300 300 L 300 240 L 400 240"/>
+  <path id="path-anim-3" fill="none" stroke="none"
+    d="M 20 460 L 20 400 L 100 400 L 100 440 L 220 440 L 220 380 L 360 380"/>
+  <path id="path-anim-4" fill="none" stroke="none"
+    d="M 0 560 L 50 560 L 50 520 L 180 520 L 180 490 L 280 490"/>
+
+  <!-- Small circuit node dots (static) -->
+  <circle cx="80" cy="180" r="2.5" fill="#d4a8e8" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="80" cy="120" r="2.5" fill="#a8c4ee" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="200" cy="120" r="2.5" fill="#d4a8e8" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="200" cy="160" r="2.5" fill="#e8a8d0" opacity="0.6" filter="url(#glow)"/>
+  <circle cx="60" cy="320" r="2.5" fill="#a8c4ee" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="140" cy="260" r="2.5" fill="#d4a8e8" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="300" cy="300" r="2.5" fill="#c4b0ee" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="100" cy="400" r="2.5" fill="#e8a8d0" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="220" cy="440" r="2.5" fill="#a8c4ee" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="50" cy="520" r="2.5" fill="#d4a8e8" opacity="0.5" filter="url(#glow)"/>
+  <circle cx="180" cy="490" r="2.5" fill="#c4b0ee" opacity="0.5" filter="url(#glow)"/>
+</svg>
+
+<!-- Center typing animation -->
+<div class="center">
+  <div class="typing-wrapper">
+    <span class="typing-text" id="typed"></span>
+    <span class="cursor"></span>
+  </div>
+  <p class="subtitle">Full-Stack Developer &nbsp;·&nbsp; Laravel &nbsp;·&nbsp; React &nbsp;·&nbsp; TypeScript</p>
+</div>
+
+<script>
+  const lines = [
+    "Hey there! I'm RemReyx 👋",
+    "Building Fast & Beautiful UIs 🎨",
+    "Laravel | React | TypeScript",
+    "Always learning, always growing 🌱",
+  ];
+
+  let lineIdx = 0, charIdx = 0, deleting = false;
+  const el = document.getElementById('typed');
+  const SPEED_TYPE = 70, SPEED_DEL = 35, PAUSE = 1800, PAUSE_START = 300;
+
+  function tick() {
+    const current = lines[lineIdx];
+    if (!deleting) {
+      el.textContent = current.slice(0, ++charIdx);
+      if (charIdx === current.length) {
+        deleting = true;
+        setTimeout(tick, PAUSE);
+        return;
+      }
+    } else {
+      el.textContent = current.slice(0, --charIdx);
+      if (charIdx === 0) {
+        deleting = false;
+        lineIdx = (lineIdx + 1) % lines.length;
+        setTimeout(tick, PAUSE_START);
+        return;
+      }
+    }
+    setTimeout(tick, deleting ? SPEED_DEL : SPEED_TYPE);
+  }
+
+  setTimeout(tick, 600);
+</script>
+</body>
+</html>
