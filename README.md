@@ -47,22 +47,17 @@ To create software that doesn’t just work—but actually matters.
 ## 📊 GitHub Stats
 
 <div align="center">
-  <table style="border-collapse: separate; border-spacing: 14px 14px;">
-    <tr>
-      <td>
-        <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=RemReyx&theme=radical" alt="GitHub profile details"/>
-      </td>
-      <td>
-        <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=RemReyx&theme=radical" alt="Most used languages"/>
-      </td>
-    </tr>
-    <tr>
-      <td colspan="2">
-        <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RemReyx&theme=radical" alt="Total contributions and streaks"/>
-      </td>
-    </tr>
-  </table>
+
+  <img src="https://github-readme-stats.vercel.app/api?username=RemReyx&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&border_radius=10" height="165"/>
+  &nbsp;&nbsp;
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=RemReyx&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&border_radius=10&langs_count=6" height="165"/>
+
 </div>
+
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=RemReyx&theme=tokyonight&hide_border=true&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff&border_radius=10" width="70%"/>
+</div>
+
 
 ---
 
