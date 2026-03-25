@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- Animated wave header -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waveBottom&color=0:0d1117,50:161b22,100:0d1117&height=120&section=header&text=Hey%20there!%20I'm%20RemReyx%20👋&fontSize=36&fontColor=ff6e96&animation=fadeIn&fontAlignY=65" />
+<!-- Custom background banner -->
+<img width="100%" src="./background.png" alt="RemReyx Banner" />
 
 <!-- Typing animation -->
 <a href="https://git.io/typing-svg">
