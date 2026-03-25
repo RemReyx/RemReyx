@@ -13,7 +13,7 @@
 
 ---
 
-## 👨‍💻 About / Mission
+## 👨‍💻 About Me
 I’m a Full-Stack Developer who enjoys turning ideas into real, working systems.
 I don’t just write code—I build experiences that are fast, scalable, and meaningful.
 
@@ -73,6 +73,30 @@ To create software that doesn’t just work—but actually matters.
 [![RemReyx's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=RemReyx&bg_color=0d1117&color=ff6e96&line=ff6e96&point=ffffff&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
 
 </div>
+
+---
+
+## 🚀 Featured Projects
+
+### 🏛️ HONOR PH — POS Dashboard & Inventory (In Production)
+> A centralized admin dashboard for managing inventory, stock adjustments, receiving/transfer flows, and operational reports for the HONOR PH POS ecosystem.
+
+![POS Dashboard Preview](./pos-portfolio/Screenshot%202026-03-25%20155811.png)
+
+**Key Features:**
+- Super Admin dashboard with role-based navigation
+- Inventory management (stock ledger, inventory usage, receiving orders, transfers)
+- Stock adjustment workflows (receiving/withdrawal/defective/return)
+- POS reporting (sales reports, discounts summaries, export + print)
+- Sales analytics with filterable reports and ranked insights
+
+![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chartdotjs&logoColor=white)
 
 ---
 
