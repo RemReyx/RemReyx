@@ -13,37 +13,13 @@
 
 ---
 
-## 🔥 Streak Stats
+## 📊 GitHub Stats
 
 <div align="center">
-
-[![GitHub Streak](https://streak-stats.demolab.com?user=RemReyx&theme=dark&hide_border=true&background=0D1117&ring=FF6E96&fire=FF6E96&currStreakLabel=FF6E96&sideLabels=FF6E96&dates=8B949E&stroke=30363D&currStreakNum=FFFFFF&sideNums=FFFFFF&border=30363D)](https://git.io/streak-stats)
-
-</div>
-
----
-
-## 📊 GitHub Profile Stats
-
-<div align="center">
-
-<a href="https://github.com/RemReyx">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=RemReyx&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=FF6E96&icon_color=FF6E96&text_color=C9D1D9&ring_color=FF6E96&count_private=true&include_all_commits=true" alt="GitHub Stats"/>
-</a>
-<a href="https://github.com/RemReyx">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=RemReyx&layout=donut&theme=dark&hide_border=true&bg_color=0D1117&title_color=FF6E96&text_color=C9D1D9&langs_count=8" alt="Top Languages"/>
-</a>
-
-</div>
-
----
-
-## 🗺️ Contribution Graph
-
-<div align="center">
-
-[![RemReyx's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=RemReyx&bg_color=0d1117&color=ff6e96&line=ff6e96&point=ffffff&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
+  <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=RemReyx&theme=radical" alt="GitHub profile details"/>
+  <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=RemReyx&theme=radical" alt="Most used languages"/>
+  <br />
+  <img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RemReyx&theme=radical" alt="Total contributions and streaks"/>
 </div>
 
 ---
@@ -72,6 +48,37 @@
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
 </div>
+
+---
+
+## 👨‍💻 About / Mission
+I’m a Full-Stack Developer who enjoys turning ideas into real, working systems.
+I don’t just write code—I build experiences that are fast, scalable, and meaningful.
+
+### 🧠 Developer Mindset
+- I break down complex problems into simple solutions
+- I value clean, maintainable, and scalable code
+- I care about both functionality and user experience
+- Always learning, always improving
+
+### 🛠️ Tech Arsenal
+Backend → `Laravel | PHP`  
+Frontend → `React | TypeScript | JavaScript`  
+Database → `MySQL`  
+Tools → `Git | REST APIs | Modern Dev Workflows`  
+
+### 🚧 Current Mission
+[██████████░░░░░░░░░░] 60%
+Building modern web & system applications...
+
+- Leveling up in Laravel & modern JS ecosystems
+- Exploring scalable and efficient architectures
+
+### 🎯 Objective
+To create software that doesn’t just work—but actually matters.
+
+### 🌍 Location
+📍 Philippines 🇵🇭
 
 ---
 
