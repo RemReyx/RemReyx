@@ -1,7 +1,8 @@
 <svg width="900" height="300" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Background gradient -->
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Background gradient
+         Use userSpaceOnUse so the animated cover rect matches the background exactly. -->
+    <linearGradient id="bg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="900" y2="300">
       <stop offset="0%"   stop-color="#ffffff"/>
       <stop offset="30%"  stop-color="#f0ecfa"/>
       <stop offset="60%"  stop-color="#eaf0fc"/>
@@ -141,7 +142,7 @@
       <text x="450" y="158">Full-Stack Developer 🚀</text>
       <!-- Cover rectangle moves left to right (typing) then right to left (deleting) -->
       <rect x="250" y="130" width="400" height="40" fill="url(#bg)">
-        <animate attributeName="x" values="250; 650; 650; 250; 250" keyTimes="0; 0.125; 0.22; 0.25; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
+        <animate attributeName="x" begin="0s" values="250; 650; 650; 250; 250" keyTimes="0; 0.125; 0.22; 0.25; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
       </rect>
     </g>
 
@@ -149,7 +150,7 @@
     <g>
       <text x="450" y="158">Building Fast &amp; Beautiful UIs 🎨</text>
       <rect x="250" y="130" width="400" height="40" fill="url(#bg)">
-        <animate attributeName="x" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.25; 0.375; 0.47; 0.5; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
+        <animate attributeName="x" begin="0s" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.25; 0.375; 0.47; 0.5; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
       </rect>
     </g>
 
@@ -157,7 +158,7 @@
     <g>
       <text x="450" y="158">Laravel | React | TypeScript</text>
       <rect x="250" y="130" width="400" height="40" fill="url(#bg)">
-        <animate attributeName="x" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.5; 0.625; 0.72; 0.75; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
+        <animate attributeName="x" begin="0s" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.5; 0.625; 0.72; 0.75; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
       </rect>
     </g>
 
@@ -165,7 +166,7 @@
     <g>
       <text x="450" y="158">Always learning, always growing 🌱</text>
       <rect x="250" y="130" width="400" height="40" fill="url(#bg)">
-        <animate attributeName="x" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.75; 0.875; 0.97; 1; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
+        <animate attributeName="x" begin="0s" values="250; 250; 650; 650; 250; 250" keyTimes="0; 0.75; 0.875; 0.97; 1; 1" dur="16s" repeatCount="indefinite" fill="freeze"/>
       </rect>
     </g>
 
@@ -182,6 +183,7 @@
            Phrase 4 (Always learning...): width ~390. Start ~255, End ~645.
       -->
       <animate attributeName="x"
+               begin="0s"
                values="
                  450;
                  295; 605; 605; 295;
