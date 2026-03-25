@@ -47,7 +47,7 @@ To create software that doesn’t just work—but actually matters.
 ## 📊 GitHub Stats
 
 <div align="center">
-  <table>
+  <table style="border-collapse: separate; border-spacing: 14px 14px;">
     <tr>
       <td>
         <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=RemReyx&theme=radical" alt="GitHub profile details"/>
@@ -57,10 +57,9 @@ To create software that doesn’t just work—but actually matters.
       </td>
     </tr>
     <tr>
-      <td>
-        <img height="160em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RemReyx&theme=radical" alt="Total contributions and streaks"/>
+      <td colspan="2">
+        <img height="180em" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=RemReyx&theme=radical" alt="Total contributions and streaks"/>
       </td>
-      <td></td>
     </tr>
   </table>
 </div>
