@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- Animated SVG banner -->
-<img width="100%" src="./banner.svg" alt="RemReyx Banner" />
+<!-- Animated banner (generated from banner.html) -->
+<img width="100%" src="./banner.gif" alt="RemReyx Banner" />
 
 
 

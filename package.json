@@ -1,0 +1,27 @@
+{
+  "name": "remreyx",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "render:banner": "node scripts/render-banner-gif.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RemReyx/RemReyx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/RemReyx/RemReyx/issues"
+  },
+  "homepage": "https://github.com/RemReyx/RemReyx#readme",
+  "dependencies": {
+    "gif-encoder-2": "^1.0.5",
+    "playwright": "^1.58.2",
+    "pngjs": "^7.0.0"
+  }
+}
