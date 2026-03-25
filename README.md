@@ -78,25 +78,29 @@ To create software that doesn’t just work—but actually matters.
 
 ## 🚀 Featured Projects
 
-### 🏛️ HONOR PH — POS Dashboard & Inventory (In Production)
-> A centralized admin dashboard for managing inventory, stock adjustments, receiving/transfer flows, and operational reports for the HONOR PH POS ecosystem.
+### 🏛️ HONOR PH — POS Backend & Inventory System (In Progress)
+> Web Backend · Laravel 12 + React + Inertia.js
 
-![POS Dashboard Preview](./pos-portfolio/Screenshot%202026-03-25%20155811.png)
+A full-featured backend inventory and operations management system powering the HONOR PH POS ecosystem. It handles the complete inventory lifecycle including receiving, transfers, returns, and withdrawals — with role-based access and serial number tracking.
 
 **Key Features:**
-- Super Admin dashboard with role-based navigation
-- Inventory management (stock ledger, inventory usage, receiving orders, transfers)
-- Stock adjustment workflows (receiving/withdrawal/defective/return)
-- POS reporting (sales reports, discounts summaries, export + print)
-- Sales analytics with filterable reports and ranked insights
+- Full inventory lifecycle: receiving orders, transfers in/out, returns, and withdrawals
+- Stock ledger & inventory usage tracking for accurate stock history
+- Stock adjustment flows: receiving/withdrawal/defective/return
+- POS reporting: sales reports, invoice/discount summaries, and exports
+- Sales analytics with filterable tables and ranked insights
+
+| Screenshot | Screenshot |
+|---|---|
+| ![POS Dashboard](./pos-portfolio/Screenshot%202026-03-25%20155811.png) | ![Stock Adjustment](./pos-portfolio/Screenshot%202026-03-25%20155832.png) |
+| ![POS Reports](./pos-portfolio/Screenshot%202026-03-25%20155916.png) | ![Sales Analytics](./pos-portfolio/Screenshot%202026-03-25%20172230.png) |
 
 ![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
 ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
-![Chart.js](https://img.shields.io/badge/Chart.js-FF6384?style=flat-square&logo=chartdotjs&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Inertia.js](https://img.shields.io/badge/Inertia.js-FFFFFF?style=flat-square&logo=inertia&logoColor=000000)
 
 ---
 
