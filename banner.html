@@ -41,6 +41,15 @@
       opacity: 0.55;
     }
 
+    /* Overlay layer used to "draw" an energized circuit per typed char */
+    .typing-overlay {
+      fill: none;
+      stroke-linecap: round;
+      opacity: 0;
+      stroke-width: 2;
+      transition: opacity 180ms ease, stroke-dashoffset 70ms linear;
+    }
+
     .glow-dot {
       fill: #d084c8;
       filter: url(#glow);
@@ -210,6 +219,8 @@
   <circle cx="220" cy="440" r="2.5" fill="#a8c4ee" opacity="0.5" filter="url(#glow)"/>
   <circle cx="50" cy="520" r="2.5" fill="#d4a8e8" opacity="0.5" filter="url(#glow)"/>
   <circle cx="180" cy="490" r="2.5" fill="#c4b0ee" opacity="0.5" filter="url(#glow)"/>
+  <!-- Glowing dot that moves along the energized circuit segment -->
+  <circle id="typing-dot" r="3.4" fill="#b06bbf" opacity="0" filter="url(#glow)"/>
 </svg>
 
 <!-- Center typing animation -->
@@ -233,10 +244,75 @@
   const el = document.getElementById('typed');
   const SPEED_TYPE = 70, SPEED_DEL = 35, PAUSE = 1800, PAUSE_START = 300;
 
+  // Build an overlay layer of dashed circuit lines that we can "draw" per character.
+  // Keeps the original circuit visible while the typing effect animates on top.
+  const circuitSvg = document.getElementById('circuit-svg');
+  const basePaths = Array.from(circuitSvg.querySelectorAll('.circuit-path'));
+  const typingDot = document.getElementById('typing-dot');
+
+  const overlayPaths = basePaths.map((p) => {
+    const clone = p.cloneNode(true);
+    clone.removeAttribute('id');
+    clone.classList.add('typing-overlay');
+    clone.style.opacity = '0';
+    circuitSvg.appendChild(clone);
+    return clone;
+  });
+
+  const overlayLengths = overlayPaths.map((p) => {
+    const len = p.getTotalLength();
+    return Number.isFinite(len) ? len : 1; // safety fallback
+  });
+
+  overlayPaths.forEach((p, i) => {
+    const len = overlayLengths[i];
+    p.style.strokeDasharray = String(len);
+    p.style.strokeDashoffset = String(len); // hidden by default
+  });
+
+  function updateCircuitForChar(progress) {
+    const currentLine = lines[lineIdx];
+    if (!currentLine) return;
+
+    const safeProgress = Math.max(0, Math.min(1, (progress || 0)));
+
+    // Use a consistent segment per sentence for a "connection" feel.
+    const activeIndex = lineIdx % overlayPaths.length;
+    const activePath = overlayPaths[activeIndex];
+    const activeLen = overlayLengths[activeIndex] * safeProgress;
+
+    // Hide all other energized overlays.
+    for (let i = 0; i < overlayPaths.length; i++) {
+      if (i === activeIndex) continue;
+      overlayPaths[i].style.opacity = '0';
+      overlayPaths[i].style.strokeDashoffset = String(overlayLengths[i]);
+    }
+
+    // Reveal or retract based on progress.
+    activePath.style.opacity = '1';
+    activePath.style.strokeDashoffset = String(overlayLengths[activeIndex] - activeLen);
+
+    if (safeProgress <= 0) {
+      typingDot.style.opacity = '0';
+      return;
+    }
+
+    const pt = activePath.getPointAtLength(activeLen);
+    if (!pt || !Number.isFinite(pt.x) || !Number.isFinite(pt.y)) {
+      typingDot.style.opacity = '0';
+      return;
+    }
+
+    typingDot.setAttribute('cx', pt.x);
+    typingDot.setAttribute('cy', pt.y);
+    typingDot.style.opacity = '1';
+  }
+
   function tick() {
     const current = lines[lineIdx];
     if (!deleting) {
       el.textContent = current.slice(0, ++charIdx);
+      updateCircuitForChar(charIdx / (current.length || 1));
       if (charIdx === current.length) {
         deleting = true;
         setTimeout(tick, PAUSE);
@@ -244,6 +320,7 @@
       }
     } else {
       el.textContent = current.slice(0, --charIdx);
+      updateCircuitForChar(charIdx / (current.length || 1));
       if (charIdx === 0) {
         deleting = false;
         lineIdx = (lineIdx + 1) % lines.length;
