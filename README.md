@@ -91,7 +91,7 @@ A full-featured backend inventory and operations management system powering the 
 - Sales analytics with filterable tables and ranked insights
 
 
-|---|---|
+
 | ![POS Dashboard](./pos-portfolio/Screenshot%202026-03-25%20155811.png) | ![Stock Adjustment](./pos-portfolio/Screenshot%202026-03-25%20155832.png) |
 | ![POS Reports](./pos-portfolio/Screenshot%202026-03-25%20155916.png) | ![Sales Analytics](./pos-portfolio/Screenshot%202026-03-25%20172230.png) |
 
