@@ -1,7 +1,7 @@
 <div align="center">
 
-<!-- Custom background banner -->
-<img width="100%" src="./background.png" alt="RemReyx Banner" />
+<!-- Animated SVG banner -->
+<img width="100%" src="./banner.svg" alt="RemReyx Banner" />
 
 <!-- Typing animation -->
 <a href="https://git.io/typing-svg">
